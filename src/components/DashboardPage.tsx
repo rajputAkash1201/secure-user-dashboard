@@ -36,7 +36,7 @@ const DashboardPage: React.FC = () => {
     return (
         <div className="max-w-xxl mx-auto mt-16 p-6 bg-white rounded-md shadow-md">
             <h1 className="text-2xl font-semibold mb-4">Dashboard</h1>
-            {user && <p className="mb-4">Welcome, {user.email}!</p>}
+            {user && <p className="mb-4">Welcome!</p>}
             {data && (
                 <div>
                     <h2 className="text-lg font-semibold mb-2">Data</h2>
