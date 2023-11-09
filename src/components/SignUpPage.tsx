@@ -1,14 +1,11 @@
 // src/components/SignUpPage.tsx
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { signUp } from '../services/authService';
-import { setUser } from "../store/user/userSlice"
 import Form from './Common/Form';
 import { useNavigate } from 'react-router-dom';
 
 const SignUpPage: React.FC = () => {
     const navigate = useNavigate();
-    const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -19,8 +16,10 @@ const SignUpPage: React.FC = () => {
     const handleSignUp = async () => {
         try {
             const user = await signUp(email, password);
+            debugger
             if (user) {
                 navigate("/login")
+                alert("User Registered!")
             }
         } catch (error) {
             console.error('Sign-up failed:', error);
